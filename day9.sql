@@ -34,4 +34,22 @@ select floor(74.231);
 select round(74.9821,2);
 select round(74.9873,2);
 select truncate(74.9873,2);
+select round(avg(sales),2) from superstore;
+
+#Numeric functions - power(),sqrt(),mod(),abs()
+#abs() - absolute -->return value without sign (-,+)
+select power(2,3);
+select power(2,5);
+select sqrt(81);
+select mod(17,5);
+select abs(-15);
+select abs(100-200);
+select exp(3);
+select exp(1);
+select log(2.718281828459045);
+select rand(); #gives some random value between 0 and 1
+select sign(-98); #gives -1 for nefative values, 1 for +ve values and 0 for 0
+select pi();
+select greatest(10,200,30);
+select least(10,200,30);
 
