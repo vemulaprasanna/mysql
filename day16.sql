@@ -75,7 +75,31 @@ select * from accounts;
 
 # -------------------- TCL Commands ---------------------
 #start transaction / begin
+start transaction
+update accounts set amount = amount-2000 where acc_id=101;
+set sql_safe_updates = 0;
+update accounts set amount= amount+2000 where acc_id=102;
+select * from accounts;
+rollback;
+commit;
 
+begin;
+update accounts set amount = amount-2000 where acc_id=101;
+savepoint sp1;
+update accounts set amnt = amount+2000 where acc_id=103;
+rollback;
+select * from accounts;
+commit;
+
+begin;
+insert into accounts values(103, 2000);
+savepoint sp1;
+select * from accounts;
+update accounts set amount = amount-2000 where acc_id=101;
+savepoint sp2;
+update accounts set amount = amount+2000 where acc_id=103;
+rollback to sp1;
+commit;
 
 
 
