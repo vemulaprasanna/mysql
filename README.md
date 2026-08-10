@@ -82,24 +82,46 @@
 - Binary (binary(n), varbinary(n), tinyblob, blob, mediumblob, longblob)
 - Boolean (boolean or bool) (0=false, 1=true)
 
-**Keys**
-- Primary
-- Foreign
-- Candidate
-- Alternate
-- Composite
-- Super
+**Keys** : To create uniqueness and referential integrity (relationship) between the data.
+- Primary     ---- Uniquely identify each record in the table and which is not null (or) combination of unique key and not null (or) it souldnot contain any null and duplicate values.
+- Foreign     ---- To create relationship between 2 tables
+- Candidate   ---- All possible primary key
+- Alternate   ---- The remaining candidate keys which are not choosen as PK.
+- Composite   ---- A set of columns which can uniquely identifies each record in the table. ( alas - composite primary key)
+- Super       ---- A set of columns which can uniquely identifies each record in the table but it may contain an unneccesary non-key column
 
 **Key Constraints**
 - Primary
 - Foreign
-- Unique
-- Not Null
-- Check
-- Default
+- Unique      ----- To ensure no duplicates in column, but it can contain null values.
+- Not Null    ----- To ensures no null values in the column
+- Check       ----- To ensure all the values in the column should satisfy /meet given condition
+- Default     ----- To assign any default value to the column
 
-**Normalization**
+**Normalization** : To design database structure
+- Data Redundancy
+- Relationship between data
+
+**Types of Normalization forms:** 
 - 1NF, 2NF, 3NF, BCNF (Boyce-Codd's NF)
+
+**1NF:**
+- It should contain single value in each cell.
+
+**2NF:**  
+- It should be in 1NF.
+- There should be no partial dependency
+- Partial dependency: Acolumn depending only on part of composite
+
+**3NF:**
+- It should be in 2NF
+- There sould be no transitive dependency
+- Transitive dependency: A non-key column depending on another non-key column.
+
+**BDNF:**
+- It should ne in 3NF
+- Every determinant must be a candidate key
+
 **Clauses:**
 - where
 - group by
