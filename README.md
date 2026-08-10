@@ -42,10 +42,10 @@
 - Many_to_Many (M:N)
 
 **ACID Properties**
-- Automacity,  All are nothing, if any changes occur will effect whole thing otherwise remains same as before.
-- Consistency, The DB must be consistent before and after the transaction.
-- Isolation, Multiple transactions occur independently without interference.
-- Durability, The changes of success transaction remains same even if system fails or crashes
+- Automacity   ---  All are nothing, if any changes occur will effect whole thing otherwise remains same as before.
+- Consistency  ---  The DB must be consistent before and after the transaction.
+- Isolation    ---  Multiple transactions occur independently without interference.
+- Durability   ---  The changes of success transaction remains same even if system fails or crashes
 
 **SQL Sub Languages**
 - DDL (Data Defination L)
@@ -75,12 +75,12 @@
 - To access or retrive the data from db
 
 **DataTypes**
-- Integer (tinyint, samllint, mediumint, int/integer, bigint)
-- Decimal (decimal(p,s) or numeric(p,s), float(p), double) p=Precise, s=Scale
+- Integer       (tinyint, samllint, mediumint, int/integer, bigint)
+- Decimal       (decimal(p,s) or numeric(p,s), float(p), double) p=Precise, s=Scale
 - Date and Time (date 'yy-mm-dd', DATETIME 'yy-mm-dd hh:mm:ss', TIMESTAMP 'yy-mm-dd hh:mm:ss', TIME 'hh:mm:ss', YEAR 'yyyy') 
-- String (CHAR(n), VARCHAR(n), text, tinytext, mediumtext, lonetext, enum, set)
-- Binary (binary(n), varbinary(n), tinyblob, blob, mediumblob, longblob)
-- Boolean (boolean or bool) (0=false, 1=true)
+- String        (CHAR(n), VARCHAR(n), text, tinytext, mediumtext, lonetext, enum, set)
+- Binary        (binary(n), varbinary(n), tinyblob, blob, mediumblob, longblob)
+- Boolean       (boolean or bool) (0=false, 1=true)
 
 **Keys** : To create uniqueness and referential integrity (relationship) between the data.
 - Primary     ---- Uniquely identify each record in the table and which is not null (or) combination of unique key and not null (or) it souldnot contain any null and duplicate values.
@@ -111,12 +111,12 @@
 **2NF:**  
 - It should be in 1NF.
 - There should be no partial dependency
-- Partial dependency: Acolumn depending only on part of composite
+- **Partial dependency:** Acolumn depending only on part of composite
 
 **3NF:**
 - It should be in 2NF
 - There sould be no transitive dependency
-- Transitive dependency: A non-key column depending on another non-key column.
+- **Transitive dependency:** A non-key column depending on another non-key column.
 
 **BDNF:**
 - It should ne in 3NF
